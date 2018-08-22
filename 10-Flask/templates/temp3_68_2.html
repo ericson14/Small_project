@@ -1,0 +1,25 @@
+{% extends 'temp2_68.html' %}
+{% macro li(color, item) %}
+<li style="background-color:{{ color }}">{{ item }}</li>
+{% endmacro %}
+{% block title %}
+循环，宏，条件
+{% endblock %}
+{% block hr_title %}
+循环，宏，条件
+{% endblock %}
+{% block control %}
+<ul>
+{% for item in my_list %}
+    {% if loop.index == 1 %}
+        {{ li('aqua', item.value) }}
+    {% elif loop.index == 2 %}
+        {{ li('blueviolet', item.value) }}
+    {% elif loop.index == 3 %}
+        {{ li('crimson', item.value) }}
+    {% elif loop.index == 4 %}
+        {{ li('darkgoldenrod', item.value) }}
+    {% endif %}
+{% endfor %}
+</ul>
+{% endblock %}

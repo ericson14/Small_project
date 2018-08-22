@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        .talk_con{
+            width:600px;
+            height:500px;
+            border:1px solid #666;
+            margin:50px auto 0;
+            background:#f9f9f9;
+        }
+        .talk_show{
+            width:580px;
+            height:420px;
+            border:1px solid #666;
+            background:#fff;
+            margin:10px auto 0;
+            overflow:auto;
+        }
+        .talk_input{
+            width:580px;
+            margin:10px auto 0;
+        }
+        .whotalk{
+            width:80px;
+            height:30px;
+            float:left;
+            outline:none;
+        }
+        .talk_word{
+            width:420px;
+            height:26px;
+            padding:0px;
+            float:left;
+            margin-left:10px;
+            outline:none;
+            text-indent:10px;
+        }        
+        .talk_sub{
+            width:56px;
+            height:30px;
+            float:left;
+            margin-left:10px;
+        }
+        .atalk{
+           margin:10px; 
+        }
+        .atalk span{
+            display:inline-block;
+            background:#0181cc;
+            border-radius:10px;
+            color:#fff;
+            padding:5px 10px;
+        }
+        .btalk{
+            margin:10px;
+            text-align:right;
+        }
+        .btalk span{
+            display:inline-block;
+            background:#ef8201;
+            border-radius:10px;
+            color:#fff;
+            padding:5px 10px;
+        }
+    </style>
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js" ></script>
+    <script type="text/javascript">      
+    // 写出对应功能代码  
+    //实现步骤：
+	//  1.获取文本框的内容
+	//  2.点击发送按钮,把文本的内容,根据html的结构追加上去
+	//  3.判断是谁说的,A说调用atalk的结构,以此类推
+	$(function(){
+		$(':text').focus()
+		$('#talksub').click(function(){
+			if($('#who').val() == 0){
+				$('#words').html($('#words').html()+'<div class="atalk"><span>'+$('#talkwords').val()+'</span></div>')
+			}else{
+				$('#words').html($('#words').html()+'<div class="btalk"><span>'+$('#talkwords').val()+'</span></div>')
+			}
+		})
+		$(document).keyup(function(e){
+			if(e.keyCode == 13){
+				$(':button').click()
+				$(':text').val('')
+			}
+		})
+	})
+    </script>
+</head>
+<body>
+    <div class="talk_con">
+        <div class="talk_show" id="words">
+        	<!--追加内容，追加一整条div标签-->
+            <div class="atalk"><span>A说：吃饭了吗？</span></div>
+            <div class="btalk"><span>B说：还没呢，你呢？</span></div>
+        </div>
+        <div class="talk_input">
+        	<!--下拉框-->
+            <select class="whotalk" id="who">
+                <option value="0">A说：</option>
+                <option value="1">B说：</option>
+            </select>
+            <!--文本框-->
+            <input type="text" class="talk_word" id="talkwords" >
+            <!--发送按钮-->
+            <input type="button" value="发送" class="talk_sub" id="talksub">
+        </div>
+    </div>
+</body>
+</html>

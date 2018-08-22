@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>首页 - 个人选股系统 V5.87</title>
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/axios.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			window.onload = function(){
+				var vm = new Vue({
+					el:'#app',
+					data:{
+						list:''
+					},
+					mounted(){
+						axios({
+							url:'list.json',
+							method:'get'
+						})
+						.then(data=>{
+							this.list = data.data.list
+						})
+						.catch(()=>{
+							alert('出错啦！')
+						})
+					}
+				})
+			}
+		</script>
+	</head>
+
+	<body>
+		<div id="app">
+		<div class="navbar navbar-inverse navbar-static-top ">
+			<div class="container">
+				<div class="navbar-header">
+					<button class="navbar-toggle" data-toggle="collapse" data-target="#mymenu">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                 </button>
+					<a href="#" class="navbar-brand">选股系统</a>
+				</div>
+				<div class="collapse navbar-collapse" id="mymenu">
+					<ul class="nav navbar-nav">
+						<li class="active">
+							<a href="">股票信息</a>
+						</li>
+						<li>
+							<a href="/center.html">个人中心</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="container" id="container">
+
+			<div class="container-fluid">
+				<table class="table table-hover">
+					<tr>
+						<th>序号</th>
+						<th>股票代码</th>
+						<th>股票简称</th>
+						<th>涨跌幅</th>
+						<th>换手率</th>
+						<th>最新价(元)</th>
+						<th>前期高点</th>
+						<th>前期高点日期</th>
+					</tr>
+	            	<tr v-for="item in list">
+	            		<td>{{item.id}}</td>
+	            		<td>{{item.code}}</td>
+	            		<td>{{item.name}}</td>
+	            		<td>{{item.crate01}}</td>
+	            		<td>{{item.crate02}}</td>
+	            		<td>{{item.crate03}}</td>
+	            		<td>{{item.hight}}</td>
+	            		<td>{{item.hightDate}}</td>
+	            	</tr>
+				</table>
+			</div>
+		</div>			
+		</div>
+
+	</body>
+
+</html>

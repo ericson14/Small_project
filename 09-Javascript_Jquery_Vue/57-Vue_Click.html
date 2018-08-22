@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Vue初步</title>
+		<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			window.onload = function(){
+				var vm = new Vue({
+					el:'#app',
+					data:{
+						num:0,
+						message:'欢迎JS',
+						items:['Apple', 'Litchee', 'Mango'],
+						picked:''
+					},
+					methods:{
+						msg:function(){
+							this.message = '欢迎Vue.js'
+						}
+					}
+				})
+			}
+		</script>
+	</head>
+	<body>
+		<div id="app">
+			<h2 @click="num+=2">按一下加2：{{num}}</h2>
+			<h3>{{message}}</h3>
+			<input @click="msg" type="button" id="" value="改变视图" />
+			<ul>
+				<li v-for="(item,index) in items">{{index}}-{{item}}</li>
+			</ul>
+			<h2>最爱语言</h2>
+			<input v-model="picked" type="radio" name="" id="" value="Java"/><label for="">Java</label>
+			<input v-model="picked" type="radio" name="" id="" value="C"/><label for="">C</label>
+			<input v-model="picked" type="radio" name="" id="" value="Python"/><label for="">Python</label>
+			<h3>你选择的语言是：{{picked}}</h3>
+		</div>
+	</body>
+</html>

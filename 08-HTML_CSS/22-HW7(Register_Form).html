@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>注册表单</title>
+		<style type="text/css">
+			body{
+				background: #00cdff;
+			}
+			.outer{
+				width: 430px;
+				height: 502px;
+				background: #f9f9f9;
+				border: 1px solid #F9F9F9;
+				padding: 24px 44px 24px 26px;
+			}
+			h3{
+				line-height: 38px;
+				border-bottom: 1px solid #cecece;
+				font-size: 24px;
+				color: #ff9b6e;
+				margin: 0 0 20px 0;
+			}
+			.contend input{
+				display: inline-block;
+				width: 330px;
+				height: 38px;
+				border: 1px solid #CECECE;
+				margin-bottom: 25px;
+			}
+			.contend label{
+				display: inline-block;
+				text-align: right;
+				width: 91px;
+				color: #757575;
+			}
+			textarea{
+				resize: none;
+				width: 326px;
+				height: 66px;
+				margin-left: 93px;
+			}
+			.per{
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			.contend{
+				position: relative;
+			}
+			#a{
+				margin: 20px 0 20px 88px;
+			}
+			.btn{
+				width: 330px;
+				margin-left: 91px;
+				height: 40px;
+				background: #00CDFF;
+				font-size: 24px;
+				color: white;
+			}
+			#accept{
+				margin-right: 20px;
+				height: 15px;
+				width: 15px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="outer">
+			<h3>注册表单</h3>
+			<form action="#" method="post">
+				<div class="contend">
+					<label>用户名：</label>
+					<input type="text" id="" value="" name="user"/>
+				</div>
+				<div class="contend">
+					<label>密码：</label>
+					<input type="password" name="pwd" />
+				</div>				
+				<div class="contend">
+					<label>确认密码：</label>
+					<input type="password" name="conf" />
+				</div>
+				<div class="contend">
+					<label>邮箱：</label>
+					<input type="text" id="" value="" name="mail"/>
+				</div>
+				<div class="contend">
+					<label class="per">个人简介：</label>
+					<textarea name="intro" rows="" cols=""></textarea>
+				</div>
+				<div id="a">
+					<input type="checkbox" name="accept" id="accept" value=""/><label for="accept">同意用户使用协议</label>
+				</div>
+				<input type="submit" value="注&nbsp&nbsp册" class="btn"/>
+			</form>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>遍历</title>
+	</head>
+	<body>
+		<ul id="list">
+		</ul>
+	</body>
+	<script type="text/javascript">
+		movie = ['钢铁侠3', '前任3', '复仇者联盟3', '蜘蛛侠3', '我不是程序员']
+		oList = document.getElementById('list')
+		for(var i=0; i<movie.length; i++){
+			oList.innerHTML += '<li>'+ movie[i] +'</li>'
+		}
+	</script>
+</html>

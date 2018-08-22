@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Todolist</title>
+	<style type="text/css">
+		.list_con{
+			width:600px;
+			margin:50px auto 0;
+		}
+		.inputtxt{
+			width:550px;
+			height:30px;
+			border:1px solid #ccc;
+			padding:0px;
+			text-indent:10px;			
+		}
+		.inputbtn{
+			width:40px;
+			height:32px;
+			padding:0px;
+			border:1px solid #ccc;
+		}
+		.list{
+			margin:0;
+			padding:0;
+			list-style:none;
+			margin-top:20px;
+		}
+		.list li{
+			height:40px;
+			line-height:40px;
+			border-bottom:1px solid #ccc;
+		}
+
+		.list li span{
+			float:left;
+		}
+
+		.list li a{
+			float:right;
+			text-decoration:none;
+			margin:0 10px;
+		}
+	</style>
+	<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		window.onload = function(){
+			var vm = new Vue({
+				el:'#app',
+				data:{
+					list:['学习HTML','学习CSS','学习JavaScript'],
+					txt:''
+				},
+				methods:{
+					add:function ni(){
+						if(this.txt==''){
+							document.getElementById('txt1').focus()
+							return
+						}
+						this.list.push(this.txt)
+						this.txt=''
+						document.getElementById('txt1').focus()
+					},
+					del:function(index){
+						this.list.splice(index,1)
+					},
+					up:function(index){
+						if(index == 0){
+							return
+						}
+						var temp = this.list[index]
+						this.list.splice(index-1,0,temp)
+						this.list.splice(index+1,1)
+					},
+					down:function(index){
+						if(index+1 == this.length){
+							return
+						}
+						var temp = this.list[index]
+						this.list.splice(index+2,0,temp)
+						this.list.splice(index,1)
+					},
+					enter:function(e){
+						if(e.keyCode == 13){
+							this.add()
+						}
+					}
+				}
+			})
+			document.getElementById('txt1').focus()
+		}
+	</script>
+</head>
+<body>
+
+	<div class="list_con" id="app">
+	<h2>To do list</h2>
+		<input type="text" name="" id="txt1" class="inputtxt" v-model="txt" @keyup="enter">
+		<input type="button" name="" value="增加" id="btn1" class="inputbtn" @click="add">
+		
+		<ul id="list" class="list">
+			<li v-for="(item, index) in list">
+				<span>{{item}}</span><a href="javascript:;" class="up" @click="up(index)"> ↑ </a><a href="javascript:;" class="down" @click="down(index)"> ↓ </a><a href="javascript:;" class="del" @click="del(index)">删除</a>
+			</li>
+		</ul>
+		
+	</div>
+</body>
+</html>

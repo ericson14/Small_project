@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>注册表单</title>
+		<style type="text/css">
+			.outer{
+				width: 400px;
+				height: 460px;
+				background: #f2f2f2;
+				padding: 20px;
+				margin: 50px auto 0;
+				position: relative;
+			}
+			.outer h3{
+				margin: 0;
+				line-height: 50px;
+				border-bottom: 0.5px solid gainsboro;
+				font-size: 22px;
+				font-weight: normal;
+			}
+			label{
+				width: 80px;
+				text-align: right;
+				display: inline-block;
+			}
+			#u, #w{
+				width: 236px;
+				height: 18px;
+			}
+			input, label{
+				margin: 8px auto;
+			}
+			textarea{
+				display: inline-block;
+				height: 98px;
+				width: 238px;
+				resize: none;
+				margin-top: 10px;
+				padding: 0;
+			}
+			.button{
+				position: absolute;
+				bottom: 20px;
+				left:80px
+			}
+			.pers{
+				float: left;
+			}
+			.font{
+				font-weight: bold;
+				font-size: 20px;
+				padding-top: 20px;
+				height: 30px;
+			}
+			select{
+				width: 120px;
+				margin-left: -5px;
+			}
+			.item{
+				height: 410px;
+				width: 400px;
+				margin: 0, auto;
+				position: absolute;
+				top: 70px;
+				left: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<form action="#" method="post">			
+		<div class="outer">
+				<h3>注册表单</h3>
+			<div class="item">
+				<div class="user">
+					<label>姓名：</label><input type="text" placeholder="请输入姓名" id="u" name="user"/>
+				</div>
+				<div class="pwd">
+					<label>密码：</label><input type="password" id="w" name="pwd"/>
+				</div>
+				<div class="sex">
+					<label>性别：</label>
+					<input type="radio" name="sex" />男
+					<input type="radio" name="sex" />女
+				</div>			
+				<div class="hobby">
+					<label for="p">爱好：</label>
+					<input type="checkbox" id="p"/>唱歌
+					<input type="checkbox" id="p"/>跑步
+					<input type="checkbox" id="p"/>游泳
+				</div>
+				<div class="photo">
+					<label>照片：</label>
+					<input type="file" title="选择文件"/>
+				</div>
+				<div class="all">
+					<div class="pers">
+						<label>个人简介：</label>
+					</div>
+						<textarea></textarea>
+				</div>
+				<div class="home">
+					<label>籍贯：</label>
+					<select name="">
+						<option value="">北京</option>
+						<option value="">广东</option>
+					</select>
+				</div>
+				<div class="button">
+					<input type="submit" value="提交"/>
+					<input type="reset" value="重置" />
+				</div>
+			</div>
+		</form>
+		</div>
+	</body>
+</html>

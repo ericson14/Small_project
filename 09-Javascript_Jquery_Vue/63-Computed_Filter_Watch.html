@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>计算属性，过滤器，监听属性</title>
+		<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			window.onload = function(){
+				var vm = new Vue({
+					el:'#app',
+					data:{
+						num:0,
+						str:'abcdef'
+					},
+					computed:{
+						strReverse:function(){
+							return this.str.split('').reverse().join('')
+						}
+					},
+					watch:{
+						look:function(newval, oldval){
+							console.log(newval +'|'+oldval)
+						}
+					},
+					filters:{
+						zero:function(value){
+							if(value<10){
+								return '0'+value
+							}else{
+								return value
+							}
+						}
+					}
+				})
+			}
+		</script>
+	</head>
+	<body>
+		<div id="app">
+			<h1 @click="num++">{{num|zero}}</h1>
+			<h2>{{strReverse}}</h2>
+		</div>
+	</body>
+</html>

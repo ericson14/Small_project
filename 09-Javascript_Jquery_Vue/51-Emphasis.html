@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>突出显示</title>
+		<script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			body{
+				background: black;
+			}
+			img{
+				width: 420px;
+				margin: 30px;
+				transition: all 1s;
+			}
+			img:hover{
+				transform: scale(1.5) rotate(360deg);
+			}
+		</style>
+		<script type="text/javascript">
+			$(function(){
+				$('img').hover(function(){
+					$(this).siblings().stop().animate({'opacity':'0.3'})
+				},function(){
+					$('img').stop().animate({'opacity':'1'})
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<img src="images/03.jpg"/>
+		<img src="images/04.jpg"/>
+		<img src="images/05.jpg"/>
+	</body>
+</html>

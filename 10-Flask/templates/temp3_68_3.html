@@ -1,0 +1,23 @@
+{% extends "temp2_68.html" %}
+{% block title %}
+特有变量和函数
+{% endblock %}
+{% block hr_title %}
+特有变量和函数
+{% endblock %}
+{% block control %}
+{{ config.DEBUG }}
+<br>
+{{ request.url }}
+    <br>
+    {{ g.name }}
+    <br>
+    {{ session.name }}
+    <br>
+    {{ url_for("special") }}
+    <br>
+    {% for message in get_flashed_messages() %}
+        {{ message }}
+        <br>
+    {% endfor %}
+{% endblock %}

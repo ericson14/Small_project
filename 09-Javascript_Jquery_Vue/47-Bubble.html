@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>事件冒泡</title>		
+		<style type="text/css">
+			.grandfather{
+				width: 500px;
+				height: 500px;
+				background: paleturquoise;
+			}
+			.father{
+				width: 300px;
+				height: 300px;
+				background: greenyellow;
+			}
+			.son{
+				width: 200px;
+				height: 200px;
+				background: blueviolet;
+				color: wheat;
+			}
+		</style>
+		<script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$('.grandfather').click(function(){
+					alert('Grandfather')
+				})
+				$('.father').click(function(){
+					alert('Father')
+				})
+				$('.son').click(function(){
+					alert('Son')
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<div class="grandfather">
+			<div class="father">
+				<div class="son">
+					事件冒泡
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

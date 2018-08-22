@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>各种选择器</title>
+		<script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+		<style>
+			div{
+				width:250px;
+				height:250px;
+				border:4px solid #000;
+			}
+		</style>
+		<script type="text/javascript">
+			$(function(){
+				$('h1').css({'color':'#00f'})
+				$('.lei').css({'font-weight':'normal'})
+				$('#box').css({'color':'yellow'})
+				$('input[type=password]').css({'width':300})
+				$('div p').css({'font-size':'20px','color':'red'})
+				$('div').has('h2').css({'color':'pink'})
+				$('div').eq(0).css({'background':'aqua'})
+				$('h3').prev().css({'color':'maroon'})
+			})
+		</script>
+	</head>
+	<body>
+		<h1>文字文字</h1>
+		<h2 id="box">文字文字</h2>
+		<h3 class="lei">文字文字</h3>
+		<div>
+			<p>我是div中的p</p>
+		</div>
+		<div>
+			<h2>我是div中的h2</h2>
+		</div>
+		<p>按实际但考虑到</p>
+		<input type="text" />
+		<input type="password" />
+		<h2>阿克苏科技大道</h2>
+		<h2>阿克苏科技大道</h2>
+		<h2>阿克苏科技大道</h2>
+		<h3>阿克苏科技大道</h3>
+	</body>
+</html>

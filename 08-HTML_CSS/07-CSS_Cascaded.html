@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>CSS——层叠选择器</title>
+		<style type="text/css">
+			.one{
+				color: aqua;
+				text-decoration: line-through;
+			}
+			h1 p{
+				color: magenta;
+			}
+			div p{color: gold;}
+		</style>
+	</head>
+	<body>
+		<h1><a href="#" class="one">广东省深圳市</a>宝安区留仙二路</h1>
+		<h1><a href="#">广东省深圳市</a>宝安区留仙二路</h1>
+		<div id="">
+			<p>我是div中的p</p>
+		</div>
+		<h1>
+			<p>我是h1中的p</p>
+		</h1>
+		<div id="">
+			<h2>
+				<p>我是div中的h2中的p</p>
+			</h2>
+		</div>
+	</body>
+</html>

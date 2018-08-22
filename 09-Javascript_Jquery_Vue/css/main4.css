@@ -1,0 +1,72 @@
+body,
+ul {
+	margin: 0px;
+	padding: 0px;
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+.tab_wrap {
+	width: 500px;
+	height: 300px;
+	margin: 50px auto 0;
+	overflow: hidden;
+	position: relative;
+}
+
+.tab_btns {
+	height: 50px;
+}
+
+.tab_btns input {
+	width: 100px;
+	height: 50px;
+	border: 0px;
+	background: #ddd;
+	font-size: 14px;
+	outline: none;
+}
+
+.tab_btns .current {
+	background: gold;
+}
+
+.tab_cons {
+	height: 250px;
+	width: 1500px;
+	background: gold;
+	position: absolute;
+	left: 0px;
+	top: 50px;
+}
+
+.tab_cons ul {
+	width: 500px;
+	height: 235px;
+	float: left;
+	padding-top: 15px;
+}
+
+.tab_cons ul li {
+	line-height: 30px;
+	margin: 5px 20px;
+	overflow: hidden;
+}
+
+.tab_cons ul a {
+	font-size: 14px;
+	color: #333;
+	float: left;
+}
+
+.tab_cons ul span {
+	font-size: 14px;
+	color: #666;
+	float: right;
+}

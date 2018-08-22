@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}控制，过滤器{% endblock %}</title>
+</head>
+<body>
+{% block hr_title %}
+控制，过滤器
+{% endblock %}
+<hr>
+{% block control %}
+{{ list1 }}
+<br>
+{{ list1 | length }}
+<br>
+{{ list1 | sort(reverse=True) }}
+<br>
+{{ list1 | sum }}
+<br>
+{{ goods_list | sum(attribute="price") }}
+<br>
+{{ str1 }}
+<br>
+{{ str1 | capitalize }}
+<br>
+{{ str1 | upper | reverse}}
+<br>
+<input type="button" value="查看控制效果" id="btn">
+{% endblock %}
+</body>
+{% block script %}
+<script>
+    document.getElementById('btn').onclick=()=>{
+        window.location.href="/control"
+    }
+</script>
+{% endblock %}
+</html>

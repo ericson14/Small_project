@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>今日头条完整版</title>
+		<style type="text/css">
+			.today{
+				width: 285px;
+				height: 310px;
+				border-top: 1px solid #c8dcf2;
+				border-bottom: 1px solid #C8DCF2;
+			}
+			.today_title{height: 40px;}
+			.today_title h3{
+				margin: 0;
+				float: left;
+				font-size: 16px;
+				font-weight: normal;
+				color: #172c45;
+				line-height: 40px;
+			}
+			.today_title a{
+				float: right;
+				text-decoration: none;
+				font-size: 12px;
+				line-height: 40px;
+				color: #172C45;
+			}
+			.today div p{
+				font-size: 12px;
+				color: #737373;
+				line-height: 20px;
+				text-indent: 2em;
+			}
+			span{
+				color: maroon;
+				font-size: 30px;
+				font-weight: bold;
+				text-decoration: underline;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="today">
+			<div class="today_title">
+				<h3>今日头条</h3>
+				<a href="#">更多>></a>
+			</div>
+			<div id="">
+				<img src="./images/banner.jpg" title="横截面"/>
+			</div>
+			<div id="">
+				<p><span>现在</span>得到了接口，下面就是要测试接口了。其实我们还差一个信息，那就是接口是用GET还是用POST呢？我在查看函数时发现了"GET"字样，就天真的以为请求方式是GET了。于是把参数放到URL最后，即以&key=value这种GET形式直接访问，但是获取不到数据。改用POST才可以。后来才发现该函数里有个变量batch.httpMethod，在控制台中输出就可以看到请求方式是GET还是POST。</p>
+			</div>
+		</div>
+	</body>
+</html>

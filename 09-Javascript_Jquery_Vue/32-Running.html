@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>跑步动画</title>
+		<style type="text/css">
+			body {
+				background: #c7c7c7;
+			}
+			
+			img {
+				width: 250px;
+				position: absolute;
+				left: 0;
+				top: 50%;
+			}
+			
+			#speed {
+				display: inline-block;
+				width: 26px;
+				height: 18px;
+				text-align: center;
+				padding: 1px, 6px;
+				border: 1px solid black;
+				margin: 2px;
+				vertical-align: bottom;
+			}
+		</style>
+	</head>
+
+	<body>
+		<input type="button" value="走你" id="go" />
+		<input type="button" value="减速" id="slow" />
+		<input type="button" value="停下" id="stop" />
+		<div id="speed">
+			0x
+		</div>
+		<img src="images/a.jpg" id="pic">
+	</body>
+	<script type="text/javascript">
+		var num = 0
+		var oGo = document.getElementById('go')
+		var oStop = document.getElementById('stop')
+		var oPic = document.getElementById('pic')
+		var oSpeed = document.getElementById('speed')
+		var oSlow = document.getElementById('slow')
+		oSpeed.style.background = document.defaultView.getComputedStyle(oSlow, null).background
+		var incr = 0
+		var total = 0
+		oGo.onclick = function() {
+			incr++
+			setInterval(function() {
+				num += 1
+				oPic.style.left = num + 'px'
+				if(num >= document.body.clientWidth - 250) {
+					num = 0
+				}
+			})
+			oSpeed.innerHTML = incr + 'x'
+			total = incr
+		}
+		oSlow.onclick = function() {
+			if(total == 0) {
+				return
+			}
+			clearInterval(total)
+			total--
+			oSpeed.innerHTML = total + 'x'
+		}
+		oStop.onclick = function() {
+			for(var i = 0; i <= total; i++) {
+				clearInterval(i)
+			}
+			oSpeed.innerHTML = '0x'
+		}
+	</script>
+
+</html>

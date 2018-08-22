@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>自定义单选，多选框</title>
+		<script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+				list-style: none;
+			}
+			
+			body {
+				width: 500px;
+				margin: 150px auto;
+			}
+			
+			ul li {
+				background: url(images/radio.gif) no-repeat left 3px;
+				padding-left: 20px;
+				margin-bottom: 10px;
+			}
+			
+			ul li.cur {
+				background-position: left -17px;
+			}
+			
+			ol li {
+				background: url(images/duo1.png) no-repeat left 0;
+				padding-left: 25px;
+				line-height: 22px;
+				margin-bottom: 10px;
+			}
+			
+			ol li.cur {
+				background-image: url(images/duo2.png);
+			}
+		</style>
+		<script type="text/javascript">
+			$(function(){
+				$('ul li').click(function(){
+					$(this).addClass('cur').siblings().removeClass()
+				})
+				$('ol li').click(function(){
+					$(this).toggleClass('cur')
+				})
+			})
+		</script>
+	</head>
+
+	<body>
+		<input type="radio" />
+		<input type="checkbox" />
+		<input type="checkbox" />
+		<input type="checkbox" />
+		<input type="checkbox" />
+		<ul>
+			<li class="cur">我虽然是li 但我可以变为单选按钮</li>
+			<li>我虽然是li 但我可以变为单选按钮</li>
+			<li>我虽然是li 但我可以变为单选按钮</li>
+			<li>我虽然是li 但我可以变为单选按钮</li>
+		</ul>
+		<ol>
+			<li class="cur">我虽然是li 但我可以变为多选按钮</li>
+			<li>我虽然是li 但我可以变为多选按钮</li>
+			<li>我虽然是li 但我可以变为多选按钮</li>
+			<li>我虽然是li 但我可以变为多选按钮</li>
+		</ol>
+	</body>
+
+</html>

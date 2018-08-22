@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册表单</title>
+</head>
+<body>
+<form method="post">
+    {{ register.csrf_token() }}
+    {{ register.username.label }}：{{ register.username }}<br>
+    {{ register.password.label }}：{{ register.password }}<br>
+    {{ register.password2.label }}：{{ register.password2 }}<br>
+    {{ register.submit }}<br>
+</form>
+{% for message in get_flashed_messages() %}
+    {{ message }}<br>
+{% endfor %}
+
+</body>
+</html>

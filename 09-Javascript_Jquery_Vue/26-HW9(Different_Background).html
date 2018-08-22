@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	    <title>不同的背景色</title>
+	    <script src="./js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+	    <style type="text/css" id="s">
+	        .set_bg_con{
+	            width:440px;
+	            height:40px;
+	            border:1px solid #ddd;
+	            margin:40px auto 0;
+	            background-color:#fff
+	        }
+	        .set_text{
+	            line-height:40px;
+	            float:left;
+	            margin:0 20px 0 10px;
+	            color:#666;
+	        }
+	        .style01,.style02,.style03,.style04,.style05,.style06{
+	            width:30px;
+	            height:26px;
+	            float:left;
+	            margin:8px 5px;
+	            background: gold;
+	            cursor:pointer;
+	        }
+	        .style01{
+	            background:#0181cc;
+	        }
+	        .style02{
+	            background:#00b9f1;
+	        }
+	        .style03{
+	            background:#ef8201;
+	        }
+	        .style04{
+	            background:#8fc320;
+	        }
+	        .style05{
+	            background:#e84191;
+	        }
+	        .style06{
+	            background:#ee87b4;
+	        }
+	    </style>
+	</head>
+	<body>
+	    <div class="set_bg_con">
+	        <div class="set_text">请选择网页的背景色：</div>
+	        <div class="a style01" onclick="temp('a')" id="a"></div>
+	        <div class="a style02" onclick="temp('b')" id="b"></div>
+	        <div class="a style03" onclick="temp('c')" id='c'></div>
+	        <div class="a style04" onclick="temp('d')" id='d'></div>
+	        <div class="a style05" onclick="temp('e')" id='e'></div>
+	        <div class="a style06" onclick="temp('f')" id='f'></div>
+	    </div>
+	</body>
+	<script type="text/javascript">
+//		function temp(id){
+//			var oStyle = document.getElementById(id)
+//			var e = document.defaultView.getComputedStyle(oStyle, null)
+//			document.body.style.background = e.backgroundColor
+//		}
+		$('.set_text').nextAll().each(function(){
+			$(this).click(function(){
+				$('body').css('background', $(this).css('background'))
+			})
+		})
+		
+//		$('.a').click(function(){
+//			$('body').css('background', $(this).css('background'))
+//		})
+	</script>
+</html>

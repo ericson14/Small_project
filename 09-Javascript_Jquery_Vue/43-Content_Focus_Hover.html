@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>内容，焦点和鼠标移入移出</title>
+		<script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$('h3').html('由JQ生成的内容')
+				$('input').eq(0).focus()
+				$('input').eq(0).blur(function(){
+					$(this).css('border','2px solid blue')
+				})
+				$('input').eq(1).hover(function(){
+					$(this).val('移入')
+				},function(){
+					$(this).val('移出')
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<h3>文字文字</h3>
+		<input type="text" name="" id="" value="" />
+		<input type="button" id="" value="按钮" />
+	</body>
+</html>

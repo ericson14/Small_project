@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>用户登录</title>
+		<style type="text/css">
+			body{
+				background: rgba(0,0,0,0.5);
+			}
+			.outer{
+				width: 500px;
+				height: 300px;
+				border: 1px solid black;
+				margin: auto;
+				background: white;
+				position: absolute;
+				top:0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+			}
+			h3{
+				background: #90ee90;
+				margin: 0;
+				line-height: 40px;
+				text-indent: 10px;
+			}
+			#u, #w{
+				width: 236px;
+				height: 24px;
+			}
+			label{
+				float: left;
+				text-align: right;
+				width: 100px;
+				line-height: 28px;
+			}
+			.user{
+				margin: 40px auto 30px;
+			}
+			#s, #r{
+				width: 100px;
+				height: 28px;
+			}
+			#s{
+				margin-left: 100px;
+			}
+			#r{
+				margin-left: 40px;
+			}
+			.pwd{
+				margin: 0 auto 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="outer">		
+			<h3>用户登录</h3>
+			<form action="#" method="post">
+				<div class="user">
+					<label>用户名：</label>
+					<input type="text" id="u" name="user"/>
+				</div>
+				<div class="pwd">
+					<label>密码：</label>
+					<input type="password" id="w" name="pwd"/>
+				</div>
+				<input type="submit" value="提交" id="s"/>
+				<input type="reset" value="重置" id="r"/>
+			</form>
+		</div>
+	</body>
+</html>

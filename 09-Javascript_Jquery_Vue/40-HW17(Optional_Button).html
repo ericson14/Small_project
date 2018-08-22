@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<style>
+			input {
+				width: 150px;
+				height: 50px;
+				font-size: 32px;
+			}
+			
+			div {
+				width: 300px;
+				height: 300px;
+				background: pink;
+				font-size: 80px;
+				text-align: center;
+				line-height: 300px;
+				margin: 50px;
+			}
+			
+			.hide {
+				display: none;
+			}
+			
+			.cur {
+				background: pink;
+			}
+		</style>
+		<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$('input').click(function(){
+					$(this).addClass('cur').siblings().removeClass()
+					$('div').eq($(this).index()).removeClass('hide').siblings('div').addClass('hide')
+				})
+			})
+		</script>
+	</head>
+
+	<body>
+		<!--
+			选项卡原理：点击0按钮，让第0个div显示，其余div隐藏，以此类推
+		-->
+		<input type="button" value="0" class="cur" />
+		<input type="button" value="1" />
+		<input type="button" value="2" />
+		<div>00000</div>
+		<div class="hide">11111</div>
+		<div class="hide">22222</div>
+	</body>
+
+</html>

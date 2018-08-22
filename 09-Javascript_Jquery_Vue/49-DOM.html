@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>DOM操作</title>
+		<script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				var txt = '<li>JQ添加的</li>'
+				$('ul').append(txt)
+				$('ul').prepend(txt)
+				$('ul').before(txt)
+				$('ul').after(txt)
+			})
+		</script>
+	</head>
+	<body>
+		<ul>
+			<li>原有的</li>
+			<li>原有的</li>
+			<li>原有的</li>
+		</ul>
+	</body>
+</html>

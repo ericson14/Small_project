@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>排他效果</title>
+		<script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			span {
+				display: inline-block;
+				width: 100px;
+				height: 100px;
+				background: #ccc;
+				margin: 50px;
+				font-size: 30px;
+				text-align: center;
+				line-height: 100px;
+			}
+			
+			.cur {
+				background: pink;
+			}
+			
+			span:hover {
+				cursor: pointer;
+			}
+		</style>
+		<script type="text/javascript">
+			$(function() {
+				$('span').click(function() {
+					$(this).addClass('cur').siblings().removeClass('cur')
+				})
+			})
+		</script>
+	</head>
+
+	<body>
+		<span>1</span>
+		<span>2</span>
+		<span>3</span>
+		<span>4</span>
+	</body>
+
+</html>

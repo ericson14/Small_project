@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>无缝滚动</title>
+	<style type="text/css">
+		body,ul{
+			margin:0;
+			padding:0;
+		}
+
+		.list_con{
+			
+			width:1000px;
+			height:200px;
+			border:1px solid #000;
+			margin:50px auto 0;
+			background-color:#f0f0f0;
+			position:relative;
+			overflow:hidden;
+		}
+
+		.list_con ul{
+			list-style:none;
+			width:2000px;
+			height:200px;
+			position:absolute;
+			left:0;
+			top:0;
+		}
+
+
+		.list_con li{
+			width:180px;
+			height:180px;
+			float:left;
+			margin:10px;
+		}
+
+		.btns_con{
+			width:1000px;
+			height:30px;
+			margin:50px auto 0;
+			position:relative;
+		}
+
+		.left,.right{
+			width:30px;
+			height:30px;
+			background-color:gold;
+			position:absolute;
+			left:-40px;
+			top:124px;
+			font-size:30px;
+			line-height:30px;
+			color:#000;
+			font-family: 'Arial';
+			text-align:center;
+			cursor:pointer;
+			border-radius:15px;
+			opacity:0.5;
+		}
+		.right{
+			left:1010px;			
+			top:124px;			
+		}
+	</style>
+	<script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function(){
+			var num = 0
+			var run = null
+			
+			function moving(){
+				run = setInterval(function(){
+					if(num == -1000){
+						num = 0
+					}
+					num -= 10
+					$('#list').css('left',num + 'px')
+				},80)
+			}
+			moving()
+			$('#list').hover(function(){
+				clearInterval(run)
+			},function(){
+				moving()
+			})
+		})
+	</script>
+</head>
+<body>
+	<div class="list_con" id="slide">
+		<ul id="list">
+		<li><a href=""><img src="images/goods021.jpg" alt="商品图片"></a></li>
+		<li><a href=""><img src="images/goods022.jpg" alt="商品图片"></a></li>
+		<li><a href=""><img src="images/goods023.jpg" alt="商品图片"></a></li>
+		<li><a href=""><img src="images/goods024.jpg" alt="商品图片"></a></li>
+		<li><a href=""><img src="images/goods025.jpg" alt="商品图片"></a></li>
+		<li><a href=""><img src="images/goods021.jpg" alt="商品图片"></a></li>
+		<li><a href=""><img src="images/goods022.jpg" alt="商品图片"></a></li>
+		<li><a href=""><img src="images/goods023.jpg" alt="商品图片"></a></li>
+		<li><a href=""><img src="images/goods024.jpg" alt="商品图片"></a></li>
+		<li><a href=""><img src="images/goods025.jpg" alt="商品图片"></a></li>
+		</ul>
+
+	</div>
+</body>
+</html>
+

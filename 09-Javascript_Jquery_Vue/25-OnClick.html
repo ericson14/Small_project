@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>点击事件</title>
+		<style type="text/css">
+			.red{color: red;}
+			.yellow{color: yellow;}
+			.green{color: green;}
+			.blue{color: blue;}
+		</style>
+	</head>
+	<body>
+		<input type="text" id="txt" value="" />
+		<select name="" id="sel">
+			<option value="0">红色</option>
+			<option value="1">黄色</option>
+			<option value="2">绿色</option>
+			<option value="3">蓝色</option>
+		</select>
+		<input type="button" id="btn" value="添加" />
+		<h3 id="head">在这里添加：</h3>
+	</body>
+	<script type="text/javascript">
+		var oBtn = document.getElementById("btn")
+		var oTxt = document.getElementById("txt")
+		var oSel = document.getElementById("sel")
+		var oHead = document.getElementById("head")
+		
+		oBtn.onclick = function(){
+			var str = oTxt.value
+			oHead.innerHTML += "<span id='spa'>" + str + "</span>"
+			var oSpa = document.getElementById("spa")
+			if(oSel.value == 0){
+				oSpa.className = 'red'
+			}else if(oSel.value == 1){
+				oSpa.className = 'yellow'
+			}else if(oSel.value == 2){
+				oSpa.className = 'green'
+			}else{
+				oSpa.className = 'blue'
+			}
+		}
+	</script>
+</html>

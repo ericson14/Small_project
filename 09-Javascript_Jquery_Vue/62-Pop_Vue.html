@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/main7.css">
+    <title>Vue弹框</title>
+    <script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        window.onload = function(){
+        	var vm = new Vue({
+        		el:'#app',
+        		data:{
+        			show:false
+        		}
+        	})
+        }
+    </script>
+</head>
+<body>
+	<div id="app" @click="show=false">
+    <input type="button" value="弹出弹框" id="btn01" @click.stop="show=true">
+    <div class="pop_main" id="pop" v-show="show">
+        <div class="pop_con" @click.stop>
+            <div class="pop_title">
+                <h3>系统提示</h3>
+                <a href="#" id="shutoff" @click="show=false">×</a>
+            </div>
+            <div class="pop_detail">
+                <p class="pop_text">亲！请关注近期的优惠活动！</p>
+            </div>
+            <div class="pop_footer">
+                              
+            </div>
+        </div>
+        <div class="mask"></div>
+    </div>		
+	</div>
+</body>
+</html>

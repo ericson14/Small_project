@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>表格</title>
+		<style type="text/css">
+			table{
+				margin: 50px auto;
+				width: 650px;
+				height: 250px;
+				border: 1px solid black;
+				border-collapse: collapse;
+			}
+			tr{
+				text-align: center;
+			}
+			th{
+				background: #53a0ce;
+				color: white;
+			}
+			tr:nth-of-type(2n){
+				background: #eaf4f3;
+			}
+			tr:nth-of-type(2n+1){
+				background: #707171;
+			}
+			td:nth-of-type(1){
+				text-align: left;
+				text-indent: 1em;
+			}
+		</style>
+	</head>
+	<body>
+		<table border="" cellspacing="0" cellpadding="">
+			<tr>
+				<th>NAME</th>
+				<th>AGE</th>
+				<th>GENDER</th>
+				<th>HEIGHT</th>
+			</tr>
+			<tr id="a">
+				<td class="name">Jill Smith</td>
+				<td class="age">25</td>
+				<td class="gen">Female</td>
+				<td class="hei">175</td>
+			</tr>
+			<tr id="b">
+				<td class="name">John Stone</td>
+				<td class="age">30</td>
+				<td class="gen">Male</td>
+				<td class="hei">179</td>
+			</tr>
+			<tr id="c">
+				<td class="name">Jane Strip</td>
+				<td class="age">29</td>
+				<td class="gen">Female</td>
+				<td class="hei">165</td>
+			</tr>
+			<tr id="d">
+				<td class="name">Gary Mountain</td>
+				<td class="age">21</td>
+				<td class="gen">Male</td>
+				<td class="hei">180</td>
+			</tr>
+			<tr id="e">
+				<td class="name">James Camera</td>
+				<td class="age">31</td>
+				<td class="gen">Male</td>
+				<td class="hei">185</td>
+			</tr>
+		</table>
+	</body>
+</html>

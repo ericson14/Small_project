@@ -1,0 +1,30 @@
+1.
+begin:      开始事务
+commit:     提交事务
+rollback:   回滚事务
+2.
+create views v_goods as(select g.id, g.name, c.name as category, b.name as brand, price
+from goods as g inner join goods_cates as c on c.id=g.cate_id inner join goods_brands
+as b on b.id=g.brand_id)
+select name, category from v_goods;
+3.
+ACID
+原子性：事务为最小工作单元，不可再分割
+一致性：数据库始终从一个一致性状态转移到另一个预期的一致性状态
+隔离性：事务之间在修改未提交之前对其他事务不可见
+持久性：事务提交后更改就永久保存到数据库而不会消失
+4.
+热逻辑备份
+在退出数据库的命令行中输入：
+mysqldump -u root -p 数据库名称 > 备份名称
+恢复
+mysql -u root -p 数据库名称 < 备份名称
+5.
+1NF：列字段不可再分割为更小的字段
+2NF：满足1NF且拥有主键且所有字段均完全依赖于主键
+3NF：满足2NF且只有直接依赖而没有间接依赖于主键的字段
+6.
+索引可以提高数据查询效率
+7.
+视图可以重构复杂查询，简化用户操作；对机密数据提供保护；更清晰表达数据；数据库重构时，减少对用户的影响
+ORM

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>京东轮播图</title>
+		<style type="text/css">
+			body{
+				height: 1000px;
+			}
+			div{
+				width: 590px;
+				height: 470px;
+				border: 1px solid blueviolet;
+				margin: 50px auto;
+				position: relative;
+			}
+			#a, #b{
+				width: 40px;
+				height: 120px;
+				background: chocolate;
+				text-align: center;
+				line-height: 120px;
+				position: absolute;
+				top: 50%;
+				margin-top: -60px;
+				font-size: 40px;
+				cursor: pointer;
+				font-weight: bold;
+			}
+			#a{
+				left: 0;
+			}
+			#b{
+				right: 0;
+			}
+			#a:hover, #b:hover{
+				background: darkblue;
+			}
+			#c{
+				width: 100px;
+				height: 400px;
+				background: forestgreen;
+				position: fixed;
+				bottom: 20px;
+				right: 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="">
+			<img src="images/lg.jpg"/>
+			<span id="a">
+				&lt;
+			</span>
+			<span id="b">
+				&gt;
+			</span>
+		</div>
+		<div id="c">
+			文字文字
+		</div>
+	</body>
+</html>

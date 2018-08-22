@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Axios</title>
+		<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/axios.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			window.onload = function(){
+				var vm = new Vue({
+					el:'#app',
+					data:{
+						txt:''
+					},
+					mounted(){
+						axios({
+							url:'myJson.json',
+							method:'get'
+						})
+						.then(data=>{
+							this.txt = data.data.name
+						})
+						.catch(()=>{
+							alert(2)
+						})
+					}
+				})
+			}
+		</script>
+	</head>
+	<body>
+		<div id="app">
+			{{txt}}
+		</div>
+	</body>
+</html>

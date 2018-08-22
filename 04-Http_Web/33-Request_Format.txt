@@ -1,0 +1,34 @@
+http://www.baidu.com:80/aaa/bbb/index.html?username=aaa&password=bbb
+URL：Uniform Resource Locator 统一资源定位符
+http协议 万维网 域名 端口：80 资源存放路径 表单信息提交内容
+https 端口：443
+
+请求行
+GET / HTTP/1.1/r/n
+请求方法 路径 协议/版本/r/n
+GET 获取 POST 发送 DELETE 删除
+
+请求头
+请求属性 属性值/r/n
+Host: baidu.com
+主机名 地址
+Connection: keep-alive
+连接方式 长连接
+Upgrade-Insecure-Request: 1
+是否可用加密http 可
+Accpet: text/html;application/xhtml+xml
+接受内容 文本/网页 应用程序/扩展超文本标记语言
+User-Agent: Mozilla/5.0（Windows NT 10.0;WOW64）AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.79 Safari/537.36 Maxthon/5.2.1.6000
+用户代理 浏览器版本，系统版本 火狐5.0，windows 10，64位，谷歌61.0，傲游5.2
+Accept-Language: zh-CN
+接受语言 中文
+Accept-Encoding: gzip
+接受压缩方式 gzip
+DOT: 1
+是否不接受精准广告追踪
+
+空行
+/r/n
+
+请求体
+。。。。。。
