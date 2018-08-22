@@ -7,7 +7,7 @@ def redis_connect():
         sr.set('sex', 'male')
         result1 = sr.keys()
         result2 = sr.hgetall("class")
-        result3 = sr.smembers("fruit")
+        result3 = sr.smembers("gaoyan")
         result4 = sr.zincrby("salary", "eric", 1550)
         print(result1)
         print(result2)
